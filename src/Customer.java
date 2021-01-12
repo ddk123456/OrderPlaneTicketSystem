@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Set;
 
 public class Customer {
 
@@ -8,6 +9,7 @@ public class Customer {
     private String phone;
     private String cardId;
     private Date birthDate;
+    private Set<Order> orderSet;
 
     public String getId() {
         return id;
@@ -55,5 +57,13 @@ public class Customer {
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Set<Order> getOrderSet() {
+        return orderSet;
+    }
+
+    public void setOrderSet(Set<Order> orderSet) {
+        this.orderSet = orderSet;
     }
 }
