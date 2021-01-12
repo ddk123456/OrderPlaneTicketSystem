@@ -12,5 +12,4 @@ public interface IFlightDao {
     Flight getFlightByDepartureAirPort(String departureAirPort);
     Flight getFlightByDestinationAirPort(String destinationAirPort);
     void updateFlight(Flight flight);
-
 }
