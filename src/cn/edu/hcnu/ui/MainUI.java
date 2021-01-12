@@ -1,6 +1,11 @@
 package cn.edu.hcnu.ui;
 
+import cn.edu.hcnu.bean.Flight;
+import cn.edu.hcnu.bll.IFlightService;
+import cn.edu.hcnu.bll.impl.FlightServiceImpl;
+
 import java.util.Scanner;
+import java.util.UUID;
 
 public class MainUI {
     public static void main(String[] args) {
@@ -18,17 +23,26 @@ public class MainUI {
             int choice = sc.nextInt();
 
             if (choice == 1) {
-                /*FLIGHT_ID           VARCHAR2(32)
-                PLANE_TYPE          VARCHAR2(20) Y
-                SEATS_NO            VARCHAR2(20) Y
-                TOTAL_SEATS_NUM     NUMBER(3)    Y
-                DEPARTURE_AIRPORT   VARCHAR2(30) Y
-                DESTINATION_AIRPORT VARCHAR2(30) Y
-                DEPARTURE_TIME      VARCHAR2(20) Y*/
+                String id= UUID.randomUUID().toString();
+
+                System.out.print("请输入航班编号：");
+                String flightId=sc.next();
                 System.out.print("请输入机型：");
                 String planeType=sc.next();
+                System.out.print("请输入座位数：");
+                int currentSeatsNum=sc.nextInt();
+                System.out.print("请输入起飞机场：");
+                String departureAirPort=sc.next();
+                System.out.print("请输入目的机场：");
+                String destinationAirPort=sc.next();
+                System.out.print("请输入起飞时间：");
+                String departureTime=sc.next();
 
+                Flight flight=new Flight(id,flightId,planeType,currentSeatsNum,
+                        departureAirPort,destinationAirPort,departureTime);
 
+                IFlightService iFlightService =new FlightServiceImpl();
+                iFlightService.insertFlight(flight);
             }
         }
     }
