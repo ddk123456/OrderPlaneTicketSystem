@@ -4,8 +4,7 @@ public class Flight {
 
     private String id;
     private String planeType;
-    private String seatsNo;
-    private String totalSeatsNum;
+    private String currentSeatsNum;
     private String departureAirPort;
     private String destinationAirPort;
     private String departureTime;
@@ -26,20 +25,12 @@ public class Flight {
         this.planeType = planeType;
     }
 
-    public String getSeatsNo() {
-        return seatsNo;
+    public String getCurrentSeatsNum() {
+        return currentSeatsNum;
     }
 
-    public void setSeatsNo(String seatsNo) {
-        this.seatsNo = seatsNo;
-    }
-
-    public String getTotalSeatsNum() {
-        return totalSeatsNum;
-    }
-
-    public void setTotalSeatsNum(String totalSeatsNum) {
-        this.totalSeatsNum = totalSeatsNum;
+    public void setCurrentSeatsNum(String currentSeatsNum) {
+        this.currentSeatsNum = currentSeatsNum;
     }
 
     public String getDepartureAirPort() {
