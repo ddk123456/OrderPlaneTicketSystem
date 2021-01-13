@@ -6,6 +6,7 @@ import cn.edu.hcnu.bll.impl.FlightServiceImpl;
 
 import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -65,6 +66,19 @@ public class MainUI {
                             System.out.println("NO MATCH");
                         }
                     }
+                }
+            } else if (choice == 2) {
+                IFlightService iFlightService = new FlightServiceImpl();
+                try {
+                    Set<Flight> allFlights=iFlightService.getAllFlights();
+                    /*
+                    Set的遍历需要用到迭代器
+                     */
+                    for(Flight flight:allFlights){
+                        System.out.println(flight);
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
         }
