@@ -11,12 +11,9 @@ public class FlightDaoIml implements IFlightDao {
 
 
     @Override
-    public void insertFlight(Flight flight) throws SQLException {
+    public void insertFlight(Flight flight,Connection conn) throws SQLException {
 
-        String url = "jdbc:oracle:thin:@localhost:1521:orclhc";
-        String username = "opts";
-        String password = "opts1234";
-        Connection conn = DriverManager.getConnection(url, username, password);
+
         String sql = "INSERT INTO flight VALUES(?,?,?,?,?,?,?)";
 
         PreparedStatement pstmt = conn.prepareStatement(sql);

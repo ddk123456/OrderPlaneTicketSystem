@@ -17,11 +17,11 @@ public class FlightTest {
         Flight flight = new Flight(id, "CZ3509", "737", 198,
                 "河池机场", "广州白云国际机场", "12:00");
         IFlightDao iFlightDao=new FlightDaoIml();
-        try {
-            iFlightDao.insertFlight(flight);
+        /*try {
+            //iFlightDao.insertFlight(flight);
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
     }
     @Test
     public void testGetFlightByDepartureTime(){
